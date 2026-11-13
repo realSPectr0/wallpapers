@@ -8,8 +8,8 @@ cd "$(dirname "$(readlink -f "$0")")"
 git add -A -- . ':!.originals'
 
 if git diff --cached --quiet; then
-    echo "Nothing new to push."
-    exit 0
+  echo "Nothing new to push."
+  exit 0
 fi
 
 added=$(git diff --cached --name-only --diff-filter=A | wc -l)
